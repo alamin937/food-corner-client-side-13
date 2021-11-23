@@ -1,0 +1,42 @@
+.banner{
+    background-image: url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+    display: inline-block;
+    width: 100%;
+}
+.banner-text h1{
+    letter-spacing: 3px;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 100px;
+}
+.banner-text h2{
+    letter-spacing: 3px;
+    font-size: 50px;
+    color: white;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 688px) {
+    .banner h1{
+        font-size: 30px;
+        
+    }
+    .banner h2{
+        font-size: 40px;
+        
+    }
+
+}
+@media only screen and (min-width: 689px) and (max-width: 991px) {
+    .banner h1{
+        font-size: 30px;
+    }
+    .banner h2{
+        font-size: 40px;
+    }
+}
