@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import UseAuth from '../../../UseHooks/UseAuth';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
     const [email, setEmail] = useState([])
@@ -15,7 +16,7 @@ const MyOrder = () => {
     const handleDelete = id =>{
         const proccess = window.confirm('Are You Sure You Want To Delete')
         if(proccess){
-            fetch(`http://localhost:5000/placeorder/${id}`, {
+            fetch(`https://evening-ridge-81485.herokuapp.com/placeorder/${id}`, {
                 method:'DELETE'
             })
             .then(res => res.json())
@@ -35,7 +36,7 @@ const MyOrder = () => {
 
     const { user } = UseAuth()
     useEffect(() => {
-        const url = `http://localhost:5000/placeorder/${user.email}`
+        const url = `https://evening-ridge-81485.herokuapp.com/placeorder/${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setEmail(data))
@@ -50,7 +51,9 @@ const MyOrder = () => {
                         <TableCell align="right">Address</TableCell>
                         <TableCell align="right">Phone</TableCell>
                         <TableCell align="right">Food Name</TableCell>
+                        <TableCell align="right">Price</TableCell>
                         <TableCell  align="right">Action </TableCell>
+                        <TableCell  align="right">Payment </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -66,7 +69,12 @@ const MyOrder = () => {
                             <TableCell align="right">{row.address}</TableCell>
                             <TableCell align="right">{row.phone}</TableCell>
                             <TableCell align="right">{row.foodName}</TableCell>
-                            <TableCell align="right"> <Button onClick={() => handleDelete(row._id)}>Cancel</Button> </TableCell>
+                            <TableCell align="right">{row.foodPrice}</TableCell>
+                            <TableCell align="right"> <Button variant='contained' onClick={() => handleDelete(row._id)}>Cancel</Button> </TableCell>
+                            <TableCell align="right">{row.payment ? 
+                            'Paid' : 
+                            <Link to={`/dashboard/payment/${row._id}`}> <button>Pay</button> </Link>
+                            }</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

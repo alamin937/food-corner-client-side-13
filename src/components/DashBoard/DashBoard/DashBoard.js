@@ -9,6 +9,14 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
+import PreviewRoundedIcon from '@mui/icons-material/PreviewRounded';
+import AdminPanelSettingsRoundedIcon from '@mui/icons-material/AdminPanelSettingsRounded';
+import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
+import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
+import ProductionQuantityLimitsRoundedIcon from '@mui/icons-material/ProductionQuantityLimitsRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 
 import {
   Outlet,
@@ -17,7 +25,7 @@ import {
 import { Button } from '@mui/material';
 import UseAuth from '../../../UseHooks/UseAuth';
 
-const drawerWidth = 200;
+const drawerWidth = 230;
 
 function DashBoard(props) {
   const { admin , logOut} = UseAuth()
@@ -29,22 +37,23 @@ function DashBoard(props) {
   };
 
   const drawer = (
-    <div style={{ textAlign: 'justify', backgroundColor: 'black', height: '100%' }}>
+    <div style={{ textAlign: 'justify', backgroundColor: 'black', height: '100%'}}>
       <Toolbar />
       <Divider />
 
-      <Link to="/home"><Button color="inherit">Home</Button></Link> <br />
-      <Link to="/dashboard"><Button color="inherit">My order</Button></Link> <br />
-      <Link to={`/dashboard/payment`}><Button color="inherit">Payment</Button></Link> <br />
-      <Link to={`/dashboard/review`}><Button color="inherit">Review</Button></Link> <br />
+     <Box style={{marginLeft:'30px'}}>
+     <Link style={{color:'white', textDecoration:'none'}} to="/home"><Button color="inherit"> <HomeRoundedIcon style={{marginRight:'10px'}} /> Home</Button></Link> <br />
+      <Link style={{color:'white', textDecoration:'none'}} to="/dashboard"><Button color="inherit"> <BorderColorRoundedIcon style={{marginRight:'10px'}} /> My order</Button></Link> <br />
+      <Link style={{color:'white', textDecoration:'none'}} to={`/dashboard/review`}><Button color="inherit"><PreviewRoundedIcon style={{marginRight:'10px'}} />Review</Button></Link> <br />
       {admin && <Box>
-        <Link to={`/dashboard/makeadmin`}><Button color="inherit">Make admin</Button></Link> <br />
-        <Link to={`/dashboard/addfoods`}><Button color="inherit">Add Foods</Button></Link> <br />
-        <Link to={`/dashboard/manageorder`}><Button color="inherit">Manage ORder</Button></Link> <br />
-        <Link to={`/dashboard/manageproduct`}><Button color="inherit">Manage Product</Button></Link> <br />
+        <Link style={{color:'white', textDecoration:'none'}} to={`/dashboard/makeadmin`}><Button color="inherit"><AdminPanelSettingsRoundedIcon style={{marginRight:'10px'}} />Make admin</Button></Link> <br />
+        <Link style={{color:'white', textDecoration:'none'}} to={`/dashboard/addfoods`}><Button color="inherit"><AddCircleOutlineRoundedIcon style={{marginRight:'10px'}} />Add Foods</Button></Link> <br />
+        <Link style={{color:'white', textDecoration:'none'}} to={`/dashboard/manageorder`}><Button color="inherit"><BookmarkBorderRoundedIcon style={{marginRight:'10px'}} />Manage ORder</Button></Link> <br />
+        <Link style={{color:'white', textDecoration:'none'}} to={`/dashboard/manageproduct`}><Button color="inherit"><ProductionQuantityLimitsRoundedIcon style={{marginRight:'10px'}} />Manage Product</Button></Link> <br />
       </Box>}
-      <Button onClick={logOut} variant='contained'>Log Out</Button>
+      <Button style={{marginTop:'30px'}} onClick={logOut} variant='contained'> <LogoutRoundedIcon /> Log Out</Button>
 
+     </Box>
 
 
 

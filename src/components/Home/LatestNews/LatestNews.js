@@ -10,7 +10,7 @@ import { CardMedia } from '@mui/material';
 const LatestNews = () => {
     return (
         <Box style={{width:'95%', margin:'0 auto'}} sx={{ flexGrow: 1 }}>
-            <h1 style={{textAlign:'left', fontSize:'40px'}}>Latest News</h1>
+            <h1 style={{textAlign:'left', fontSize:'40px', color:'white'}}>Latest News</h1>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
           <Card sx={{ minWidth: 275 }}>

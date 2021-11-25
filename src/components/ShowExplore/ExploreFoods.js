@@ -6,13 +6,13 @@ import SingleFood from './SingleFood';
 const ExploreFoods = () => {
     const [explores, setExplores] = useState([])
     useEffect(() =>{
-        fetch('http://localhost:5000/foods')
+        fetch('https://evening-ridge-81485.herokuapp.com/foods')
         .then(res => res.json())
         .then(data => setExplores(data))
     },[])
     return (
         <Box style={{width:'90%', margin:'0 auto', marginTop:'40px'}} sx={{ flexGrow: 1 }}>
-        <Typography className='name' variant='h3' style={{textAlign:'left', marginBottom:'20px', fontWeight:'600'}}>
+        <Typography className='name' variant='h3' style={{textAlign:'left', marginBottom:'20px', fontWeight:'600', color:'white'}}>
         Foods Corner
         </Typography>
   <Grid  container spacing={2}>

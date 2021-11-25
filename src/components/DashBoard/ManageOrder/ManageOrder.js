@@ -14,7 +14,7 @@ const MyOrder = () => {
     const handleDelete = id =>{
             const proccess = window.confirm('Are You Sure You Want To Delete')
             if(proccess){
-                fetch(`http://localhost:5000/placeorder/${id}`, {
+                fetch(`https://evening-ridge-81485.herokuapp.com/placeorder/${id}`, {
                     method:'DELETE'
                 })
                 .then(res => res.json())
@@ -29,7 +29,7 @@ const MyOrder = () => {
     }
     
     useEffect(() =>{
-        const url = `http://localhost:5000/placeorder/${email}`
+        const url = 'https://evening-ridge-81485.herokuapp.com/placeorder'
         fetch(url)
         .then(res => res.json())
         .then(data => setEmail(data))
@@ -60,7 +60,7 @@ const MyOrder = () => {
               <TableCell align="right">{row.address}</TableCell>
               <TableCell align="right">{row.phone}</TableCell>
               <TableCell align="right">{row.foodName}</TableCell>
-              <TableCell align="right"> <Button onClick={() => handleDelete(row._id)}>Cancel</Button> </TableCell>
+              <TableCell align="right"> <Button variant='contained' onClick={() => handleDelete(row._id)}>Cancel</Button> </TableCell>
             </TableRow>
           ))}
         </TableBody>

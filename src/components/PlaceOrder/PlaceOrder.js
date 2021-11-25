@@ -16,7 +16,8 @@ const PlaceOrder = () => {
     const [successfull, setSuccessfull] = useState(false)
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/placeorder', {
+        console.log(data)
+        fetch('https://evening-ridge-81485.herokuapp.com/placeorder', {
             method:'POST',
             headers:{
                 'content-type': 'application/json'
@@ -36,7 +37,7 @@ const PlaceOrder = () => {
     const { foodId } = useParams();
     const [singles, setSingles] = useState({})
     useEffect(() => {
-        const url = `http://localhost:5000/foods/${foodId}`
+        const url = `https://evening-ridge-81485.herokuapp.com/foods/${foodId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setSingles(data))
@@ -79,7 +80,8 @@ const PlaceOrder = () => {
                             <input defaultValue={user.email} style={{width:'300px', padding:'5px',marginTop:'10px'}} {...register("email")} /> <br />
                             <input placeholder='Address' style={{width:'300px', padding:'5px',marginTop:'10px'}} {...register("address")} /> <br />
                             <input placeholder='Phone' style={{width:'300px', padding:'5px',marginTop:'10px'}} {...register("phone")} /> <br />
-                            <input placeholder='Food Name' style={{width:'300px', padding:'5px',marginTop:'10px'}} {...register("foodName")} /> <br />
+                            <input placeholder="Food Name" style={{width:'300px', padding:'5px',marginTop:'10px'}} {...register("foodName")} /> <br />
+                            <input value={singles.price} style={{width:'300px', padding:'5px',marginTop:'10px'}} {...register("foodPrice")} /> <br />
                             
                             <input style={{width:'310px', padding:'10px',marginTop:'10px', backgroundColor:'blue', border:'0', color:'white'}} type="submit" />
                         </form>

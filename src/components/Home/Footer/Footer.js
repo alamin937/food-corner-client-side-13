@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 
 const Footer = () => {
     return (
-        <Box style={{backgroundColor:'black', marginTop:'100px'}} sx={{ flexGrow: 1 }}>
+        <Box style={{backgroundColor:'blue', marginTop:'100px'}} sx={{ flexGrow: 1 }}>
              <Typography style={{color:'white'}} variant='h4'>
              -------------FOOD CORNER------------
              </Typography>

@@ -51,7 +51,7 @@ const UseHooks = () =>{
     }
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/users/${user?.email}`)
+        fetch(`https://evening-ridge-81485.herokuapp.com/users/${user?.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
     },[user?.email])
@@ -80,7 +80,7 @@ const UseHooks = () =>{
 
     const saveUser = (email,displayName) =>{
         const user = {email:email, displayName:displayName}
-        fetch('http://localhost:5000/users', {
+        fetch('https://evening-ridge-81485.herokuapp.com/users', {
             method:'POST',
             headers:{
                 'content-type':'application/json'

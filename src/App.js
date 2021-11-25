@@ -31,7 +31,7 @@ function App() {
                 <DashBoard></DashBoard>
               </PrivateRoute>} >
                 <Route path='/dashboard' element={<MyOrder></MyOrder>}></Route>
-                <Route path={`/dashboard/payment`} element={<Payment></Payment>}></Route>
+                <Route path={`/dashboard/payment/:paymentId`} element={<Payment></Payment>}></Route>
                 <Route path={`/dashboard/review`} element={<Review></Review>}></Route>
                 <Route path={`/dashboard/manageorder`} element={<ManageOrder></ManageOrder>}></Route>
                 <Route path={`/dashboard/addfoods`} element={<AddFoods></AddFoods>}></Route>

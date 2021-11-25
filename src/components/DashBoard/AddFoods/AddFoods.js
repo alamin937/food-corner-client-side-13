@@ -18,7 +18,7 @@ const AddFoods = () => {
         formData.append('price', price)
         formData.append('description', description)
         formData.append('img', img)
-        fetch('http://localhost:5000/foods', {
+        fetch('https://evening-ridge-81485.herokuapp.com/foods', {
             method: 'POST',
             body: formData
         })
