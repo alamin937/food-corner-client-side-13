@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Button } from '@mui/material';
 
-const MyOrder = () => {
+const ManageOrder = () => {
     const [email, setEmail] = useState([])
 
     const handleDelete = id =>{
@@ -69,4 +69,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default ManageOrder;
