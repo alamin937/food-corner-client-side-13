@@ -6,7 +6,8 @@
     color:white
 }
 .menu-area img{
-    width: 100px
+    width: 200px;
+    border-radius: 50%;
 }
 
 @media only screen and (max-width: 688px) {

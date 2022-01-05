@@ -11,8 +11,8 @@ const SingleFood = ({explore}) => {
     const {_id,foodName, price, img, description} = explore
     return (
         <Grid item xs={12} md={3}>
-          <Card sx={{ minWidth: 275 }}>
-          <CardMedia
+          <Card  style={{borderRadius:'30px'}} sx={{ minWidth: 275 }}>
+          <CardMedia style={{width:'70%', margin:'0 auto', marginTop:'10px', borderRadius:'20px'}}
         component="img"
         height="194"
         image={`data:image/*;base64,${img}`}
@@ -32,7 +32,7 @@ const SingleFood = ({explore}) => {
          {description}
         </Typography>
       </CardContent>
-      <Link style={{textDecoration:'none'}} to={`/foods/${_id}`}><Button sx={{mb:2}} variant ='contained'>Order Now</Button></Link>
+      <Link style={{textDecoration:'none'}} to={`/foods/${_id}`}><Button style={{width:'100%', borderRadius:'30px'}} sx={{mb:2}} variant ='contained'>Place Order</Button></Link>
     </Card>
         </Grid>
     

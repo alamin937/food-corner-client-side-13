@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewSection from '../../DashBoard/ReviewSection/ReviewSection';
 import Banner from '../Banner/Banner';
+import Express from '../Express/Express';
 import Foods from '../Foods/Foods';
 import Footer from '../Footer/Footer';
 import HotDog from '../HotDog/HotDog';
@@ -16,6 +17,7 @@ const Home = () => {
             <Banner></Banner>
             <MenuArea></MenuArea>
             <Foods></Foods>
+            <Express></Express>
             <HotDog></HotDog>
             <ReviewSection></ReviewSection>
             <SpecialFoodArea></SpecialFoodArea>
