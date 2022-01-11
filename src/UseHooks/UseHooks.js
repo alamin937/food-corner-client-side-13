@@ -1,5 +1,5 @@
 import firebaseAuthentication from "../firebase/firebase.init"
-import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged,signOut , updateProfile ,signInWithEmailAndPassword  } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged,signOut , updateProfile ,signInWithEmailAndPassword, getIdToken  } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 
@@ -11,6 +11,7 @@ const UseHooks = () =>{
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true)
     const [admin, setAdmin] = useState(false)
+    const [token, setToken] = useState('');
     const auth = getAuth();
 
     const register = (email,password,name) =>{
@@ -60,6 +61,10 @@ const UseHooks = () =>{
     useEffect(() =>{
         onAuthStateChanged(auth, user =>{
             if(user){
+                getIdToken(user)
+                .then(idToken => {
+                    setToken(idToken)
+                })
                 setUser(user)
             }
             else{
@@ -98,7 +103,8 @@ const UseHooks = () =>{
         error,
         loginUser,
         loading,
-        admin
+        admin,
+        token
     }
 
 
